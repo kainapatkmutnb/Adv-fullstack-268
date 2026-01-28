@@ -6,8 +6,10 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
+// parse incoming request
 app.use(express.json());
 
+// sample data
 let books = [
   {
     id: 1,
