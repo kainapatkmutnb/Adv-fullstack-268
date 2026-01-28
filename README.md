@@ -81,6 +81,8 @@ Adv-fullstack-268/
 
 ## 📝 API Usage Examples
 
+> 💡 **Tip**: ใช้ [Postman](https://www.postman.com/) สำหรับทดสอบ API ได้สะดวกยิ่งขึ้น
+
 ### GET - ดึงข้อมูลหนังสือทั้งหมด
 
 ```bash
