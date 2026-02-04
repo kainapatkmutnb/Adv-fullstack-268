@@ -4,6 +4,7 @@
 // Run this file with node CRUDBookSQLite.js
 // Test with Postman
 
+require("dotenv").config({ path: "../.env" });
 const express = require("express");
 const sqlite3 = require("sqlite3");
 const app = express();
@@ -13,6 +14,11 @@ const db = new sqlite3.Database("./Database/Book.sqlite");
 
 // parse incoming requests
 app.use(express.json());
+
+// route to home page
+app.get("/", (req, res) => {
+  res.send("Hello Books World!");
+});
 
 // create books table if it doesn't exist
 db.run(`CREATE TABLE IF NOT EXISTS books (
@@ -94,5 +100,5 @@ app.delete("/books/:id", (req, res) => {
   });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));
