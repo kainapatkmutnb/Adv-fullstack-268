@@ -2,7 +2,8 @@
 // npm install dotenv express
 // Rus this file with: node CRUDBookNoDB.js
 // Test with Postman
-require("dotenv").config();
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "../.env") });
 const express = require("express");
 const app = express();
 
@@ -73,7 +74,7 @@ app.delete("/books/:id", (req, res) => {
   res.json(book);
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
