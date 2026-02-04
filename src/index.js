@@ -1,9 +1,8 @@
-const path = require("path");
-require("dotenv").config({ path: path.join(__dirname, "../.env") });
+require("dotenv").config();
 
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
